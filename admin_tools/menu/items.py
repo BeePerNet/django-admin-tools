@@ -117,7 +117,7 @@ class MenuItem(object):
         A menu item is considered as active if it's URL or one of its
         descendants URL is equals to the current URL.
         """
-        current_url = request.get_full_path()
+        current_url = request.path
         return self.url == current_url or \
             len([c for c in self.children if c.is_selected(request)]) > 0
 
